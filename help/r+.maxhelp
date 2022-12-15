@@ -418,8 +418,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 49.0, 390.0, 187.0, 20.0 ],
-					"text" : "send-receive without interpolation"
+					"patching_rect" : [ 49.0, 426.0, 290.0, 20.0 ],
+					"text" : "send-receive without interpolation - for UI and control"
 				}
 
 			}
@@ -430,7 +430,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 49.0, 348.0, 56.0, 46.0 ],
+					"patching_rect" : [ 49.0, 384.0, 56.0, 46.0 ],
 					"text" : "fbk"
 				}
 
@@ -464,8 +464,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 49.0, 47.0, 171.0, 20.0 ],
-					"text" : "send-receive with interpolation"
+					"patching_rect" : [ 49.0, 47.0, 273.0, 20.0 ],
+					"text" : "send-receive with interpolation - for UI and control"
 				}
 
 			}
@@ -541,7 +541,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 167.0, 415.0, 76.0, 20.0 ],
+					"patching_rect" : [ 167.0, 451.0, 76.0, 20.0 ],
 					"text" : "fbk <param>"
 				}
 
@@ -555,7 +555,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 49.0, 415.0, 50.0, 22.0 ]
+					"patching_rect" : [ 49.0, 451.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -564,9 +564,9 @@
 					"id" : "obj-22",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 109.0, 415.0, 58.0, 22.0 ],
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"patching_rect" : [ 109.0, 451.0, 58.0, 22.0 ],
 					"text" : "fbk pouet"
 				}
 
