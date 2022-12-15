@@ -7,7 +7,8 @@ function anything()
 {
   var a = arrayfromargs(messagename, arguments);
   var key = a[0];
-  var value = a[1];
+  a.shift();
+  var value = a;
   var keyAsAnArray = key.split('-');
   if (keyAsAnArray.length > 2) {
     var dictName = keyAsAnArray[0]+'-'+keyAsAnArray[1];
