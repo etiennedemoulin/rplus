@@ -40,29 +40,76 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-5",
+					"id" : "obj-34",
 					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 126.0, 300.5, 82.0, 49.0 ],
+					"patching_rect" : [ 360.0, 242.5, 52.0, 49.0 ],
 					"presentation_linecount" : 2,
-					"text" : ";\rpouet 3 1000;\r"
+					"text" : ";\rpouet 0;\r"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-4",
+					"id" : "obj-33",
 					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 49.0, 300.5, 49.0, 35.0 ],
-					"presentation_linecount" : 2,
-					"text" : ";\rpouet 0"
+					"patching_rect" : [ 223.0, 451.0, 52.0, 35.0 ],
+					"text" : ";\rtoto one"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-30",
+					"items" : [ "one", ",", "two", ",", "three", ",", "four" ],
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 49.0, 451.0, 100.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-29",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 155.0, 488.0, 50.0, 22.0 ],
+					"text" : "two"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 157.0, 451.0, 48.0, 22.0 ],
+					"text" : "fbk toto"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 49.0, 419.5, 129.0, 20.0 ],
+					"text" : "work also with symbol!"
 				}
 
 			}
@@ -99,7 +146,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 487.5, 402.0, 216.5, 28.0 ]
+					"patching_rect" : [ 617.5, 407.0, 216.5, 28.0 ]
 				}
 
 			}
@@ -111,7 +158,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 538.5, 439.0, 165.0, 49.0 ],
+					"patching_rect" : [ 668.5, 444.0, 165.0, 49.0 ],
 					"text" : ";\r1-sample-myFloat 0.1 10000;\r"
 				}
 
@@ -122,7 +169,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 487.5, 441.0, 45.0, 45.0 ]
+					"patching_rect" : [ 617.5, 446.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -157,7 +204,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 730.0, 4.5, 58.0, 22.0 ],
+					"patching_rect" : [ 860.0, 9.5, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -170,7 +217,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 730.0, 35.5, 122.0, 49.0 ],
+					"patching_rect" : [ 860.0, 40.5, 122.0, 49.0 ],
 					"text" : ";\r1-sample-reset bang;\r"
 				}
 
@@ -181,7 +228,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 488.0, 65.5, 171.0, 20.0 ],
+					"patching_rect" : [ 618.0, 70.5, 171.0, 20.0 ],
 					"text" : "template for Carmine's FX"
 				}
 
@@ -203,7 +250,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 488.0, 87.5, 360.0, 310.0 ],
+					"patching_rect" : [ 618.0, 92.5, 360.0, 310.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -215,7 +262,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 488.0, 4.5, 148.0, 46.0 ],
+					"patching_rect" : [ 618.0, 9.5, 148.0, 46.0 ],
 					"text" : "bpatcher"
 				}
 
@@ -291,7 +338,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 217.0, 650.0, 50.0, 22.0 ]
+					"patching_rect" : [ 217.0, 661.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -302,7 +349,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 272.0, 650.0, 110.0, 22.0 ],
+					"patching_rect" : [ 272.0, 661.0, 110.0, 22.0 ],
 					"text" : "r+ 1-pouet-myFloat"
 				}
 
@@ -313,7 +360,7 @@
 					"maxclass" : "dict.view",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 49.0, 696.0, 218.0, 58.0 ]
+					"patching_rect" : [ 49.0, 707.0, 218.0, 58.0 ]
 				}
 
 			}
@@ -324,7 +371,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 49.0, 642.0, 58.0, 22.0 ],
+					"patching_rect" : [ 49.0, 653.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -336,7 +383,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 49.0, 670.0, 71.0, 22.0 ],
+					"patching_rect" : [ 49.0, 681.0, 71.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -353,7 +400,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 49.0, 614.0, 125.0, 20.0 ],
+					"patching_rect" : [ 49.0, 625.0, 125.0, 20.0 ],
 					"text" : "exemple :"
 				}
 
@@ -401,7 +448,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 49.0, 587.0, 422.0, 20.0 ],
+					"patching_rect" : [ 49.0, 598.0, 422.0, 20.0 ],
 					"text" : "r+ and fbk objects will add <param> : <value> in the <instance>-<engine> dict"
 				}
 
@@ -423,7 +470,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 49.0, 542.0, 427.0, 20.0 ],
+					"patching_rect" : [ 49.0, 553.0, 427.0, 20.0 ],
 					"text" : "if your named send-receive is from this format : <instance>-<engine>-<param>"
 				}
 
@@ -435,7 +482,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 49.0, 494.0, 64.0, 46.0 ],
+					"patching_rect" : [ 49.0, 505.0, 64.0, 46.0 ],
 					"text" : "dict"
 				}
 
@@ -446,7 +493,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 49.0, 426.0, 290.0, 20.0 ],
+					"patching_rect" : [ 49.0, 349.0, 290.0, 20.0 ],
 					"text" : "send-receive without interpolation - for UI and control"
 				}
 
@@ -458,7 +505,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 49.0, 384.0, 56.0, 46.0 ],
+					"patching_rect" : [ 49.0, 307.0, 56.0, 46.0 ],
 					"text" : "fbk"
 				}
 
@@ -569,7 +616,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 167.0, 451.0, 76.0, 20.0 ],
+					"patching_rect" : [ 167.0, 374.0, 76.0, 20.0 ],
 					"text" : "fbk <param>"
 				}
 
@@ -583,7 +630,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 49.0, 451.0, 50.0, 22.0 ]
+					"patching_rect" : [ 49.0, 374.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -593,8 +640,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "float" ],
-					"patching_rect" : [ 109.0, 451.0, 58.0, 22.0 ],
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 109.0, 374.0, 58.0, 22.0 ],
 					"text" : "fbk pouet"
 				}
 
@@ -641,6 +688,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-29", 1 ],
+					"source" : [ "obj-12", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-30", 0 ],
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-17", 0 ]
 				}
@@ -671,6 +732,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-30", 1 ]
 				}
 
 			}
