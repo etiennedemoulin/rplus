@@ -1,6 +1,5 @@
 const Max = require('max-api');
 
-
 // Use the 'outlet' function to send messages out of node.script's outlet
 Max.addHandler("get", async (msg) => {
   let output = ``;

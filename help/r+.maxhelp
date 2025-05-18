@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 1,
+			"minor" : 6,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 1161.0, 769.0 ],
+		"rect" : [ 34.0, 100.0, 786.0, 769.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,33 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-7",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "n4m.monitor.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 332.0, 1839.0, 400.0, 220.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-93",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 917.0, 696.375008702278137, 143.0, 33.0 ],
-					"presentation_linecount" : 4,
 					"text" : "dict name is parsed from my-little-param-name"
 				}
 
@@ -58,7 +78,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 128.0, 380.0, 158.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "work with all messages type"
 				}
 
@@ -119,7 +138,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 48.5, 1902.0, 142.0, 62.0 ],
-					"text" : ";\r1-sample-enable 0;\r1-sample-myFloat 0.1;\r"
+					"text" : ";\r1-sample-enable 0;\r1-sample-myFloat 0;\r"
 				}
 
 			}
@@ -193,14 +212,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-80",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 884.0, 427.5, 50.0, 35.0 ],
-					"presentation_linecount" : 2,
-					"text" : "51. 54. 55."
+					"patching_rect" : [ 884.0, 427.5, 50.0, 22.0 ],
+					"text" : "d e f"
 				}
 
 			}
@@ -256,13 +273,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-32",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1011.0, 481.0, 50.0, 35.0 ],
-					"text" : "51. 54. 55."
+					"patching_rect" : [ 1011.0, 481.0, 50.0, 22.0 ],
+					"text" : "d e f"
 				}
 
 			}
@@ -336,7 +352,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 616.916645765304565, 470.0, 50.0, 22.0 ],
-					"text" : "one"
+					"text" : "three"
 				}
 
 			}
@@ -520,11 +536,12 @@
 					"id" : "obj-59",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 842.0, 701.875008702278137, 72.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -607,11 +624,12 @@
 					"id" : "obj-47",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 49.0, 762.0, 71.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -1075,6 +1093,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-74", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-75", 0 ]
 				}
@@ -1124,10 +1149,28 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "fit_jweb_to_bounds.js",
+				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n4m.monitor.maxpat",
+				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "r+.maxpat",
 				"bootpath" : "~/Github/rplus/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "resize_n4m_monitor_patcher.js",
+				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
