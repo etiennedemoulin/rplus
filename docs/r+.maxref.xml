@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="r+" module="max" category="data processing, routing, matrix">
+
+	<digest>
+		Receive object with interpolation
+	</digest>
+	
+	<description>
+		Rplus is a small tool used as a Max receive, useful to deal with time interpolation of values in Max. r+ support number only.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Etienne Démoulin</metadata>
+		<metadata name="author">Carmine Cella</metadata>
+		<metadata name="tag">data</metadata>
+		<metadata name="tag">Processing</metadata>
+		<metadata name="tag">max</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="float">
+			<digest>r+ : (float) graphical input connection.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="float">
+			<digest>r+ : (float) graphical output connection.</digest>
+		</outlet>
+		<outlet id="1" type="float">
+			<digest>r+ : (float) control output connection.</digest>
+			<description>Use this output to work with interpolation.</description>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="receive-name" optional="0" type="symbol">
+			<digest>Name of the receive object</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="fbk"/>
+		<seealso name="receive"/>
+		<seealso name="send"/>
+	</seealsolist>
+	
+</c74object>
