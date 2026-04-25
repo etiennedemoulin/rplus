@@ -5,21 +5,28 @@ outlets = 1;
 let receiveName;
 let dictName;
 let className;
+let instance;
+let engine;
+let param;
 
+let objects = [];
 
-function patcherargs() {
-  const a = arrayfromargs(messagename, arguments);
-  a.shift();
-  receiveName = a[0];
+function patcherargs(inlet) {
+
+  if (!inlet) {
+    return;
+  }
+
+  receiveName = inlet;
 
   const receiveArray = receiveName.split('-');
 
   // need to refine condition to match instance-engine-with-composed-name-param-with-composed-name
   if (receiveArray.length === 3 && +receiveArray[0] === +receiveArray[0]) {
     // receive match syntax
-    const instance = receiveArray[0];
-    const engine = receiveArray[1];
-    const param = receiveArray[2];
+    instance = Number.parseInt(receiveArray[0]);
+    engine = receiveArray[1];
+    param = receiveArray[2];
     className = `${receiveArray[1]}-${receiveArray[2]}`;
     dictName = `${receiveArray[0]}-${receiveArray[1]}`;
   } else {
@@ -36,7 +43,7 @@ function done() {
   if (receiveName && dictName && className) {
     _createReceive();
   } else {
-    // here implement set method
+    // here implement set method ????
   }
 }
 
@@ -59,14 +66,38 @@ function _setToDict(dict, key, value) {
   d.set(key,value);
 }
 
+function shadow() {
+  // (poly) shadow receiveName with instance number
+  const d = new Dict("rplus.poly");
+  patcherargs(`${d.get(instance)}-${engine}-${param}`);
+  _createReceive();
+
+}
 
 function _createReceive() {
-  const sendObject = this.patcher.newdefault(368, 82, "send", receiveName);
+
+  _delete();
+
+  const sendObject = this.patcher.newdefault(268, 82, "send", receiveName);
+  objects.push(sendObject);
+
   const receiveObject = this.patcher.newdefault(10, 20, "receive", receiveName);
+  objects.push(receiveObject);
+
   const receiveGlobalObject = this.patcher.newdefault(200, 20, "receive", className);
+  objects.push(receiveGlobalObject);
+
   const destination = this.patcher.getnamed("destination");
   const source = this.patcher.getnamed("source");
+
   this.patcher.connect(receiveObject, 0, destination, 0);
   this.patcher.connect(receiveGlobalObject, 0, destination, 0);
   this.patcher.connect(source, 0, sendObject, 0);
+}
+
+function _delete() {
+  objects.forEach(object => {
+    this.patcher.remove(object);
+  });
+  objects = [];
 }

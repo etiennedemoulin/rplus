@@ -9,8 +9,35 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 102.0, 273.0, 1000.0, 696.0 ],
+        "rect": [ 103.0, 174.0, 1000.0, 696.0 ],
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-2",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 379.0, 167.0, 61.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict rplus"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-5",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 262.0, 130.0, 59.0, 22.0 ],
+                    "text": "open 100"
+                }
+            },
             {
                 "box": {
                     "id": "obj-4",
@@ -20,7 +47,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 702.0, 55.0, 127.0, 49.0 ],
-                    "presentation_linecount": 3,
                     "text": ";\rgroup1-my-param 0;\rgroup2-my-param 100"
                 }
             },
@@ -47,7 +73,14 @@
                 }
             }
         ],
-        "lines": [],
+        "lines": [
+            {
+                "patchline": {
+                    "destination": [ "obj-1", 0 ],
+                    "source": [ "obj-5", 0 ]
+                }
+            }
+        ],
         "autosave": 0
     }
 }
