@@ -1,4 +1,3 @@
-
 inlets = 1;
 outlets = 1;
 
@@ -10,6 +9,24 @@ let engine;
 let param;
 
 let objects = [];
+
+let rplus = new Global("rplus");
+if (!rplus.offset) {
+  rplus.offset = 0;
+}
+
+// @todo refine condition and stocked instance, engine & param
+
+function thispoly(inlet) {
+  // (poly) shadow receiveName with instance number
+
+  if (inlet !== 0 && engine && param) {
+    patcherargs(`${inlet + rplus.offset}-${engine}-${param}`);
+    done();
+  } else {
+    post("can't shadow parameter " + receiveName + " because it doesn't match formatting");
+  }
+}
 
 function patcherargs(inlet) {
 
@@ -39,42 +56,49 @@ function patcherargs(inlet) {
 
 function done() {
   // post(`receive name : ${receiveName}\n dict name: ${dictName}\n class name: ${className}`);
-  
   if (receiveName && dictName && className) {
     _createReceive();
   } else {
-    // here implement set method ????
+    // here implement method
   }
 }
 
-function setToDict()
-{
-  const a = arrayfromargs(messagename, arguments);
-  a.shift();
-  _setToDict(dictName, receiveName, a.join(' '));
-}
-
 function setDictName() {
+  // set a custom dict name instead of <instance>-<engine>
   const a = arrayfromargs(messagename, arguments);
   a.shift();
   dictName = a[0];
 }
 
+function setToDict()
+{
+// exposed function
+  const a = arrayfromargs(messagename, arguments);
+  a.shift();
+  _setToDict(dictName, receiveName, a.join(' '));
+}
+
 function _setToDict(dict, key, value) {
+  // populate the <instance>-<engine> dictionary
   // post("send "+key+" "+value+" at "+dict);post();
   const d = new Dict(dict);
   d.set(key,value);
+
+  if (instance && engine && param) {
+    const e = new Dict(`${engine}-${param}`);
+    e.set(key, value);
+  }
+
 }
 
 function shadow() {
   // (poly) shadow receiveName with instance number
-  const d = new Dict("rplus.poly");
-  patcherargs(`${d.get(instance)}-${engine}-${param}`);
-  _createReceive();
-
+  // call thispoly function with instance number
+  outlet(0,"thispoly","bang");
 }
 
 function _createReceive() {
+  // create send and receive
 
   _delete();
 
@@ -96,8 +120,16 @@ function _createReceive() {
 }
 
 function _delete() {
+  // delete scripted send and receive
   objects.forEach(object => {
     this.patcher.remove(object);
   });
   objects = [];
 }
+
+function offset(value) {
+  // set an offset for shadow method (global)
+  rplus.offset = Number.parseInt(value) - 1;
+  post("> (rplus) offset changed for " + value + ", please re-instanciate your poly in order to apply change");
+  post();
+} 
